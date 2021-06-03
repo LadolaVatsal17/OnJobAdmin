@@ -1,0 +1,24 @@
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminBal.dll
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminBal.pdb
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminDal.dll
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminEntity.dll
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminDal.pdb
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminDal.dll.config
+V:\AspProject\OnJobAdmin\AdminBal\bin\Debug\AdminEntity.pdb
+V:\AspProject\OnJobAdmin\AdminBal\obj\Debug\AdminBal.csprojAssemblyReference.cache
+V:\AspProject\OnJobAdmin\AdminBal\obj\Debug\AdminBal.csproj.CoreCompileInputs.cache
+V:\AspProject\OnJobAdmin\AdminBal\obj\Debug\AdminBal.csproj.CopyComplete
+V:\AspProject\OnJobAdmin\AdminBal\obj\Debug\AdminBal.dll
+V:\AspProject\OnJobAdmin\AdminBal\obj\Debug\AdminBal.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminBal.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminBal.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminDal.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminEntity.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminDal.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminDal.dll.config
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\bin\Debug\AdminEntity.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\obj\Debug\AdminBal.csprojAssemblyReference.cache
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\obj\Debug\AdminBal.csproj.CoreCompileInputs.cache
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\obj\Debug\AdminBal.csproj.CopyComplete
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\obj\Debug\AdminBal.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminBal\obj\Debug\AdminBal.pdb

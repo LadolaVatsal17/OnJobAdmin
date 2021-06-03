@@ -1,0 +1,201 @@
+﻿@model AdminEntity.AdminModel.Admin
+
+@{
+    ViewBag.Title = "View User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+}
+
+@if (@TempData["Message"] != null)
+{
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        if ('@TempData["Message"]' == "1") {
+            toastr.success("User Status Change Successful!!");
+        }
+        else
+        {
+            toastr.error("User is Not Disable!!");
+        }
+    });
+    </script>
+}
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <div class="col-md-6">
+                    <h4><i class="fa fa-list"></i> &nbsp; Users List</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-body table-responsive">
+            <table id="example1" class="table table-bordered table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Mobile No.</th>
+                        <th>Job Title</th>                        
+                        <th style="width: 150px;" class="text-right">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.lstUsers)
+                    {
+                        counter++;
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.FirstName</td>
+                        <td><p>@item.Email</td>
+                        <td><p>@item.MobileNo</td>
+                        <td><p>@item.Job_title</td>
+
+                        <td style="float:right">
+                            @if (item.Is_active == 1)
+                            {
+                                <a href="javascript:void(0)" data-usr_id="@item.User_id" data-flg="@item.Is_active" id="user_delete" class="btn btn-success" type="button">
+                                    <i class="fa fa-unlock" aria-hidden="true"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0)" data-usr_id="@item.User_id" data-flg="@item.Is_active" id="user_delete" class="btn btn-danger" type="button">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    $("#user_delete").click(function (e)
+    {
+        flg = $(this).data('flg');
+        if (flg == "1")
+        {
+            val = $(this).data('usr_id');
+            e.preventDefault();
+            swal({
+                title: "Want to Disable ?",
+                text: "",
+                type: "info",
+                showCancelButton: true,
+                cancelButtonClass: 'btn-secondary waves-effect',
+                confirmButtonClass: 'btn-success waves-effect waves-light',
+                confirmButtonText: "Yes",
+                closeOnConfirm: false
+            },
+                function () {
+                    $.ajax(
+                        {
+                            url: '@Url.Action("UserDisable", "User")',
+                            data: { id: val },
+                            type: "POST"
+                        })
+                        .done(function (data) {
+                            sweetAlert
+                                ({
+                                    title: "Disable!",
+                                    text: "Disable was successfully !",
+                                    type: "success",
+                                     timer: 1000,
+                                    showConfirmButton: false
+                                },
+                                    function () {
+                                        window.location.href = '/User/Index';
+                                    });
+                        })
+                        .error(function (data) {
+                            swal("Oops", "We couldn't connect to the server!", "error");
+                        });
+                });
+        }
+        else
+        {
+            val = $(this).data('usr_id');
+            e.preventDefault();
+            swal({
+                title: "Want to enable ?",
+                text: "",
+                type: "info",
+                showCancelButton: true,
+                cancelButtonClass: 'btn-secondary waves-effect',
+                confirmButtonClass: 'btn-success waves-effect waves-light',
+                confirmButtonText: "Yes",
+                closeOnConfirm: false
+            },
+               function () {
+                    $.ajax(
+                        {
+                            url: '@Url.Action("UserDisable", "User")',
+                            data: { id: val },
+                            type: "POST"
+                        })
+                        .done(function (data) {
+                            sweetAlert
+                                ({
+                                    title: "Enable!",
+                                    text: "Enable was successfully !",
+                                    type: "success",
+                                    timer: 1000,
+                                    showConfirmButton: false
+                                },
+                                    function () {
+
+                                        window.location.href = '/User/Index';
+                                    });
+
+                        })
+                        .error(function (data) {
+                            swal("Oops", "We couldn't connect to the server!", "error");
+                        });
+                });
+        }
+    });
+
+
+
+
+    @*$(document).on('click', '#user_delete', function () {
+      var result = confirm("Want to Disable ?");
+      val = $(this).data('usr_id')
+       if (result) {
+            $.ajax({
+                url: '@Url.Action("UserDisable", "User")',
+                data: { id: val },
+                type:'post',
+                success: function (responce) {
+                        window.location = '@Url.Action("index", "User")'
+                },
+            });
+       }
+    });*@
+</script>
+
+<script>
+    $(function () {
+
+        $('#example1').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+            "responsive": true,
+        });
+    });
+</script>

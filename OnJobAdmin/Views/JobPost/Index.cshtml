@@ -1,0 +1,180 @@
+﻿@model AdminEntity.AdminModel.Admin
+@{
+    ViewBag.Title = "View Company";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+}
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <div class="col-md-6">
+                    <h4><i class="fa fa-list"></i> &nbsp; Posted Job List</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-body table-responsive">
+            <table id="example1" class="table table-bordered table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Company Name</th>
+                        <th>Job title</th>
+                        <th>Job category</th>
+                        <th>Expiry date</th>
+                       
+                        
+                        <th style="width: 150px;" class="text-right">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.lstjobpost)
+                    {
+                        counter++;
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.Company_name</td>
+                        <td><p>@item.job_title</td>
+                        <td><p>@item.cat_name</td>
+                        <td><p>@item.Expiry_date</td>
+                       
+                        <td style="float:right">
+
+                            <a href="javascript:void(0)" data-usr_id="@item.job_id" id="postjob_view" class="btn btn-info">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+
+                            @if (item.Is_active == 1)
+                            {
+                                <a href="javascript:void(0)" data-usr_id="@item.job_id" data-flg="@item.Is_active" id="jobpost_delete" class="btn btn-success" type="button">
+                                    <i class="fa fa-unlock" aria-hidden="true"></i>
+                                </a>
+
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0)" data-usr_id="@item.job_id" data-flg="@item.Is_active" id="jobpost_delete" class="btn btn-danger" type="button">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </a>
+                            }
+                            &nbsp;
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    $("#jobpost_delete").click(function (e)
+    {
+        flg = $(this).data('flg');
+        if (flg == "1")
+        {
+            val = $(this).data('usr_id');
+            e.preventDefault();
+            swal({
+                title: "Want to Disable ?",
+                text: "",
+                type: "info",
+                showCancelButton: true,
+                cancelButtonClass: 'btn-secondary waves-effect',
+                confirmButtonClass: 'btn-success waves-effect waves-light',
+                confirmButtonText: "Yes",
+                closeOnConfirm: false
+            },
+                function () {
+                    $.ajax(
+                        {
+                            url: '@Url.Action("JobpostDisable", "JobPost")',
+                            data: { id: val },
+                            type: "POST"
+                        })
+                        .done(function (data) {
+                            sweetAlert
+                                ({
+                                    title: "Disable!",
+                                    text: "Disable was successfully !",
+                                    type: "success",
+                                     timer: 1000,
+                                    showConfirmButton: false
+                                },
+                                function () {
+                                    window.location.href = '/JobPost/Index';
+                                });
+                        })
+                        .error(function (data) {
+                            swal("Oops", "We couldn't connect to the server!", "error");
+                        });
+                });
+        } else {
+            val = $(this).data('usr_id');
+            e.preventDefault();
+            swal({
+                title: "Want to enable ?",
+                text: "",
+                type: "info",
+                showCancelButton: true,
+                cancelButtonClass: 'btn-secondary waves-effect',
+                confirmButtonClass: 'btn-success waves-effect waves-light',
+                confirmButtonText: "Yes",
+                closeOnConfirm: false
+            },
+                function () {
+                    $.ajax(
+                        {
+                            url: '@Url.Action("JobpostDisable", "JobPost")',
+                            data: { id: val },
+                            type: "POST"
+
+                        })
+                        .done(function (data) {
+                            sweetAlert
+                                ({
+                                    title: "Enable!",
+                                    text: "Enable was successfully !",
+                                    type: "success",
+                                    timer: 1000,
+                                    showConfirmButton: false
+                                },
+                                    function () {
+
+                                        window.location.href = '/JobPost/Index';
+                                    });
+
+                        })
+                        .error(function (data) {
+                            swal("Oops", "We couldn't connect to the server!", "error");
+                        });
+                });
+        }
+    });
+
+    $(function () {
+
+        $('#example1').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+            "responsive": true,
+        });
+
+        debugger;
+        $(document).on('click', '#postjob_view', function (){
+                var Id = $(this).data('usr_id');
+                window.location.href = "@Url.Action("ViewPostedJob", "JobPost", new {id = "Id"})".replace("Id", Id);
+        });
+    });
+</script>

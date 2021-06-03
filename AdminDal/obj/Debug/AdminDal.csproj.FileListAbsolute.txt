@@ -1,0 +1,28 @@
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\AdminDal.dll.config
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\AdminDal.dll
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\AdminDal.pdb
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\AdminEntity.dll
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.dll
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.SqlServer.dll
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\AdminEntity.pdb
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.xml
+V:\AspProject\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.SqlServer.xml
+V:\AspProject\OnJobAdmin\AdminDal\obj\Debug\AdminDal.csprojAssemblyReference.cache
+V:\AspProject\OnJobAdmin\AdminDal\obj\Debug\AdminDal.csproj.CoreCompileInputs.cache
+V:\AspProject\OnJobAdmin\AdminDal\obj\Debug\AdminDal.csproj.CopyComplete
+V:\AspProject\OnJobAdmin\AdminDal\obj\Debug\AdminDal.dll
+V:\AspProject\OnJobAdmin\AdminDal\obj\Debug\AdminDal.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\AdminDal.dll.config
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\AdminDal.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\AdminDal.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\AdminEntity.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.SqlServer.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\AdminEntity.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.xml
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\bin\Debug\EntityFramework.SqlServer.xml
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\obj\Debug\AdminDal.csprojAssemblyReference.cache
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\obj\Debug\AdminDal.csproj.CoreCompileInputs.cache
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\obj\Debug\AdminDal.csproj.CopyComplete
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\obj\Debug\AdminDal.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminDal\obj\Debug\AdminDal.pdb

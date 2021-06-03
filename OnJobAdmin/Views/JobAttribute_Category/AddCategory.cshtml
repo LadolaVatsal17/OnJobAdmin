@@ -1,0 +1,45 @@
+﻿@model AdminEntity.AdminModel.Category
+@{
+    ViewBag.Title = "Add Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- page start-->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body with-border">
+                <div class="col-md-6">
+                    <h4><i class="fa fa-plus"></i> &nbsp; Add New Category</h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="/JobAttribute_Category/index" class="btn btn-success"><i class="fa fa-list"></i> Category List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box border-top-solid">
+                @using (Html.BeginForm("AddCategory", "JobAttribute_Category", FormMethod.Post, new { @class = "form-horizontal" })) //Method name , Controler Name
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-body my-form-body">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Type Name</label>
+                            <div class="col-sm-7">
+                                @Html.EditorFor(model => model.cat_name, new { htmlAttributes = new { @class = "form-control", placeholder = "Category Name" }})
+                                @Html.ValidationMessageFor(model => model.cat_name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" name="submit" value="Add Type" class="btn btn-info pull-right">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section> 

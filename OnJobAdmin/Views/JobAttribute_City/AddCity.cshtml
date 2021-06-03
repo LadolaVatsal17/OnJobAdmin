@@ -1,0 +1,82 @@
+﻿@model AdminEntity.AdminModel.City
+@{
+    ViewBag.Title = "Add City";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- page start-->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body with-border">
+                <div class="col-md-6">
+                    <h4><i class="fa fa-plus"></i> &nbsp; Add New City</h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="/JobAttribute_City/index" class="btn btn-success"><i class="fa fa-list"></i> City List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box border-top-solid">
+                @using (Html.BeginForm("AddCity", "JobAttribute_City", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    @Html.AntiForgeryToken()
+                <div class="box-body my-form-body">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">State</label>
+                        <div class="col-sm-7">
+                            <select class="form-control" required=""  name="State_id" id="State_id">
+                                <option>Select State</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">City Name</label>
+                        <div class="col-sm-7">
+                            @Html.EditorFor(model => model.City_name, new { htmlAttributes = new { @class = "form-control", placeholder = "City Name" } })
+                            @Html.ValidationMessageFor(model => model.City_name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="submit" name="submit" value="Add City" class="btn btn-info pull-right">
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section> 
+<script>
+    $(document).ready(function () {
+
+        $(function () {
+            var ddlCustomers = $("#State_id");
+            ddlCustomers.empty().append('<option selected="selected" value="0" disabled = "disabled">Loading.....</option>');
+            $.ajax({
+                type: "POST",
+                url: "/JobAttribute_City/AjaxMethodState/",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    ddlCustomers.empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(response, function () {
+                        ddlCustomers.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+
+    });
+</script>

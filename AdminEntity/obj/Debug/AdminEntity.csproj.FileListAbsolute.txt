@@ -1,0 +1,12 @@
+V:\AspProject\OnJobAdmin\AdminEntity\bin\Debug\AdminEntity.dll
+V:\AspProject\OnJobAdmin\AdminEntity\bin\Debug\AdminEntity.pdb
+V:\AspProject\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.csprojAssemblyReference.cache
+V:\AspProject\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.csproj.CoreCompileInputs.cache
+V:\AspProject\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.dll
+V:\AspProject\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminEntity\bin\Debug\AdminEntity.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminEntity\bin\Debug\AdminEntity.pdb
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.csprojAssemblyReference.cache
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.csproj.CoreCompileInputs.cache
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.dll
+D:\SEM 6\ASP.NET\04-03\OnJobAdmin\AdminEntity\obj\Debug\AdminEntity.pdb

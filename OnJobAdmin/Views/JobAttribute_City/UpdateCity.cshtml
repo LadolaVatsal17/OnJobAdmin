@@ -1,0 +1,49 @@
+﻿@model AdminEntity.AdminModel.City
+@{
+    ViewBag.Title = "Update City";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <div class="col-md-6">
+                    <h4><i class="fa fa-pencil"></i> &nbsp; Edit City</h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="/JobAttribute_City/index" class="btn btn-success"><i class="fa fa-list"></i>  City List</a>
+                    <a href="/JobAttribute_City/AddCity" class="btn btn-success"><i class="fa fa-plus"></i> Add New City</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Edit City</h3>
+                </div>
+                @using (Html.BeginForm("UpdateCity", "JobAttribute_City", FormMethod.Post, new { @class = "form-horizontal" })) //Method name , Controler Name
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="job_type_name" class="col-sm-2 control-label">City Name</label>
+                            <div class="col-sm-9">
+                                <input type="hidden" name="cat_id" value="@Model.City_id" class="form-control" id="firstname" placeholder="">
+                                <input type="text" name="cat_name" value="@Model.City_name" class="form-control" id="firstname" placeholder="Category Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-11">
+                                <input type="submit" name="submit" value="Update Category" class="btn btn-info pull-right">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

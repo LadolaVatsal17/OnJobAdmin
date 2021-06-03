@@ -1,0 +1,140 @@
+﻿@model AdminEntity.AdminModel.JobPost
+@{
+    ViewBag.Title = "ViewPostedJob";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content">
+    <header class="box box-body">
+        <div class="col-md-6">
+            <h3><i class="fa fa-folder-o"></i> View Posted Job</h3>
+        </div>
+        <div class="col-md-6">
+            <a href="/JobPost/index" class="btn btn-primary pull-right"><span class="fa fa-list"></span> View Posted Job List</a>
+        </div>
+    </header>
+    <div class="box box-body">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        
+        <div class="row my-form-body">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Company Name*</label>
+                    <input type="text" name="job_type" value="@Model.Company_name" class="form-control" id="job_type" disabled>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Job Title*</label>
+                    <input type="hidden" name="id" value="@Model.job_id" class="form-control" id="firstname">
+                    <input type="text" name="job_title" value="@Model.job_title" class="form-control" id="job_title" disabled>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Type*</label>
+                    <input type="text" name="job_type" value="@Model.job_type" class="form-control" id="job_type" disabled>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Category*</label>
+                    <input type="text" name="cat_name" value="@Model.cat_name" class="form-control" id="cat_name" disabled>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Job Indusry*</label>
+                    <input type="text" name="industry_name" value="@Model.industry_name" class="form-control" id="industry_name" disabled>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Position Available *</label>
+                    <input type="text" name="total_position" value="@Model.total_position" class="form-control" id="total_position" disabled>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>Working Experience *</label>
+                    
+                       
+                          
+                                <input type="text" name="working_experience" value="@Model.working_experience" class="form-control" id="working_experience" disabled>
+                           
+                        
+                    
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Salary Minimum *</label>
+                                <input type="text" name="salary_min" value="@Model.salary_min" class="form-control" id="salary_min" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Salary Maxmimum *</label>
+                                <input type="text" name="salary_max" value="@Model.salary_max" class="form-control" id="salary_max" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label> Skills*</label>
+                    <input type="text" name="skill" value="@Model.skill" class="form-control" id="skill" disabled>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group">
+                    <label>Job Description*</label>
+                    <textarea name="job_description" value="@Model.job_description" class="textarea form-control" id="exampleFormControlTextarea1" rows="5" disabled>@Model.job_description</textarea>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>Employment Type*</label>
+                    <input type="text" name="emp_type" value="@Model.emp_type" class="form-control" id="emp_type" disabled>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>Education*</label>
+                    <input type="text" name="qualification_req" value="@Model.qualification_req" class="form-control" id="qualification_req" disabled>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>State *</label>
+                    <input type="text" name="State_name" value="@Model.State_name" class="form-control" id="State_name" disabled>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>City *</label>
+                    <input type="text" name="City_name" value="@Model.City_name" class="form-control" id="City_name" disabled>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</section>
